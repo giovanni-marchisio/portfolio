@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Lugar para definirmos as variáveis do CSS */
+/* tinyurl.com/figma2304 */
+
+
+:root {
+    --primary: #cccccc;
+    --secondary: #474306;
+    --tertirary: #ffffff;
+    --background: #000000;
+    --folder-color-primary: #FFE9A2;
+    --folder-color-segundary: #F8D775;
+    --folder-color-terciary: #dfc169;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+a{
+    color: var(--primary);
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 2;
+    color: var(--tertirary);
+}
+
+p {
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.8;
+}
+
+body {
+    background-color:  var(--background);
+    font-family: "Poppins", sans-serif;
+
+
+}
+
+ /* Olha mãe! sem margin-top e margin-bottom :D */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+header {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    opacity: 80%;
+    top: 0;
+    width: 100vw;
+    padding: 50px;
+    background-color: var(--background);
+    z-index: 2;
+}
+
+header .name {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+header .menu ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    font-weight: 400;
+
+}
+
+header .menu a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+header .social-menu i {
+    font-size: 30px;
+}
+header .social-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+header .social-menu img {
+    width: 26px;
+}
+
+main {
+    width: 85%;
+    margin: 135px auto;
+}
+
+main .profile .job-area {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: var(--primary);
+}
+
+main .profile {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    gap: 60px;
+    
+}
+
+main .job-area h1 {
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 1.16;
+}
+
+main .job-area span {
+    font-size: 28px;
+}
+
+main .job-area a{
+    width: 150px;
+    height: 60px;
+    color: var(--secondary);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid var(--secondary);
+    position: relative;
+    
+}
+
+main .job-area .background-layer {
+    width: 100%;
+    height: 100%;
+    background-color: var(--tertirary);
+    z-index: -1;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    border-radius: 8px;
+}
+
+main .photo img {
+    width: 500px;
+    border-radius: 10px;
+}
+
+/* Tabas muitas tabas*/
+
+/*====================================================== // ================================*/
+
+
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+main .btn-label {
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 3px solid #FFE9A2;
+    font-size: 32px;
+    padding: 0 5px;
+    width: 150px;
+    background-color: #FFE9A2;
+    color: #000000;
+
+}
+
+main .main-folder {
+    display: none;
+    width: 85vw;
+    height: 60vh;
+    gap: 10px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+main .folder-main-top {
+    width: 580px;
+    height: 10px;
+    border-radius: 4px;
+    background-color: #FFE9A2;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    position: absolute;
+    z-index: -1;
+    top: -8px;
+}
+
+main .folder-main {
+    width: 600px;
+    height: 300px;
+    border-radius: 4px;
+    background-color: var(--folder-color-segundary);
+}
+
+.folder-main-container {
+     display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 6px; 
+}
+
+.folder-inside-container {
+    display: flex;
+}
+
+.container-tab-main input:checked+label{
+    background-color: var(--folder-color-segundary);
+    border-color: var(--folder-color-segundary);
+}
+
+.tabs-inside input:checked+label{
+    background-color: var(--folder-color-terciary);
+    border-color: var(--folder-color-terciary);
+}
+
+#tab-main:checked ~ .main-folder{
+    display: flex;
+    background-color: var(--folder-color-segundary);
+
+}
+
+#tab-main:checked ~ .folder-main-container  {
+    display: none;
+}
+
+#tab-main:checked ~ .main-folder > .folder-inside-container .tab-1 .tab-2{
+    display: none;
+}
+
+.tabs-inside .btn-label-inside {
+    position: relative;
+    left: 6px;
+    bottom: -6px;
+    padding: 0 10px;
+    margin-left: -5px;
+    font-size: 30px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 3px solid var(--folder-color-segundary);
+    background-color: var(--folder-color-primary);
+}
+
+.tab-1 {
+    margin-top: 6px;
+    margin-left: 1px;
+    padding: 5px 10px;
+    display: none;
+    width: 40vw;
+    height: 50vh;
+    background-color: var(--folder-color-terciary);
+    border-left-color: var(--folder-color-segundary);
+    border-right-color: var(--folder-color-segundary);
+    border-bottom-color: var(--folder-color-segundary);
+}
+
+.tab-1 img {
+    padding: 5px 10px;
+    width: 100px;
+}
+
+.tab-2 img {
+    height: 26px;
+}
+.tab-2 {
+    margin-top: 6px;
+    padding: 5px 10px;
+    display: none;
+    width: 40vw;
+    height: 50vh;
+    background-color: var(--folder-color-terciary);
+    border: 1px solid var(--folder-color-terciary);
+    border-left-color: var(--folder-color-segundary);
+    border-right-color: var(--folder-color-segundary);
+    border-bottom-color: var(--folder-color-segundary);
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tab-2 span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row;
+}
+
+.tab-2 a {
+    color: #000;
+}
+
+#tab-inside-1:checked ~.folder-inside-container .tab-1{
+    display: flex;
+}
+
+#tab-inside-2:checked ~.folder-inside-container .tab-2{
+    display: flex;
+}
+
+.container-tab-main {
+    display: flex;
+    flex-direction: column;
+}
